@@ -1,0 +1,5 @@
+node_modules/
+src/debian/*
+!src/debian/{changelog,control,rules,license}
+artifacts/
+

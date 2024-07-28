@@ -1,0 +1,12 @@
+compat
+debchange
+DEBEMAIL
+DEBFULLNAME
+debhelper
+DEBHELPER
+debuild
+devscripts
+hadolint
+hashicorp
+noninteractive
+substvars

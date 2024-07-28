@@ -1,0 +1,32 @@
+{
+	"name": "debian-packer",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "../..",
+		"options": [
+			"--tag=vsc-debian-packer-${localWorkspaceFolderBasename}:rolling"
+		]
+	},
+	"mounts": [
+		{
+			"type": "bind",
+			"source": "${localEnv:HOME}/.config/cspell/dictionary.txt",
+			"target": "/root/.config/cspell/dictionary.txt"
+		}
+	],
+	"runArgs": [
+		"--name=vsc-debian-packer-${localWorkspaceFolderBasename}"
+	],
+	"onCreateCommand": "make cspell",
+	"customizations": {
+		"vscode": {
+			// cspell:disable
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"mads-hartmann.bash-ide-vscode",
+				"dawidd6.debian-vscode"
+			]
+			// cspell.enable
+		}
+	}
+}

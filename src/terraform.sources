@@ -1,0 +1,6 @@
+# Upstream instruction shown on https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+Types: deb
+URIs: https://apt.releases.hashicorp.com
+Suites: bookworm bullseye buster noble mantic jammy focal
+Components: main
+Signed-By: /usr/share/keyrings/hashicorp-archive-keyring.asc

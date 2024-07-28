@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@cspell/dict-makefile": "^1.0.0"
+  }
+}

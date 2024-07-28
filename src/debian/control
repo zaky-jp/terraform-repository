@@ -1,0 +1,11 @@
+Source: terraform-repository
+Maintainer: Rintaro Kanzaki <105104188+zaky-jp@users.noreply.github.com>
+Section: utils
+Priority: optional
+Homepage: https://github.com/zaky-jp/terraform-repository
+
+Package: terraform-repository
+Architecture: all
+Section: utils
+Priority: optional
+Description: Install official terraform repository into apt management system
