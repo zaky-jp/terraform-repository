@@ -1,0 +1,5 @@
+#!/usr/bin/make -f
+export PACKAGE_NAME := terraform-repository
+export VERSION := 0.0.1
+export DEBFULLNAME := Rintaro Kanzaki
+export DEBEMAIL := 105104188+zaky-jp@users.noreply.github.com

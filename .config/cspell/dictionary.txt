@@ -6,7 +6,4 @@ debhelper
 DEBHELPER
 debuild
 devscripts
-hadolint
-hashicorp
-noninteractive
 substvars

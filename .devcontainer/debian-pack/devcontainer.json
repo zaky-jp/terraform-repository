@@ -3,6 +3,9 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"context": "../..",
+		"args": {
+			"WORKSPACE_DIR": "${containerWorkspaceFolder}"
+		},
 		"options": [
 			"--tag=vsc-debian-packer-${localWorkspaceFolderBasename}:rolling"
 		]
@@ -10,8 +13,8 @@
 	"mounts": [
 		{
 			"type": "bind",
-			"source": "${localEnv:HOME}/.config/cspell/dictionary.txt",
-			"target": "/root/.config/cspell/dictionary.txt"
+			"source": "${localEnv:HOME}/.config/cspell/user-dictionary.txt",
+			"target": "${containerWorkspaceFolder}/.config/cspell/user-dictionary.txt"
 		}
 	],
 	"runArgs": [

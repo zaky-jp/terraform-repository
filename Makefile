@@ -1,12 +1,7 @@
-# makefile config
-SHELL := bash
-.SHELLFLAGS := -eu -o pipefail -c
-.DEFAULT_GOAL := all
+include .config/make/common
 
 # constant
 ARTIFACT_DIR := ./artifacts
-export PACKAGE_NAME := terraform-repository
-export VERSION := 0.0.1
 
 # targets
 $(ARTIFACT_DIR):
@@ -14,7 +9,7 @@ $(ARTIFACT_DIR):
 
 # verbs
 .PHONY: cspell
-cspell:
+cspell: package.json
 	npm install
 
 .PHONY: bump
@@ -24,12 +19,14 @@ bump:
 .PHONY: debian-package
 debian-package:
 	$(MAKE) clean && \
-	$(MAKE) $(ARTIFACT_DIR) && \
 	$(MAKE) -C src debuild && \
+	$(MAKE) move-artifacts
+
+.PHONY: move-artifacts
+move-artifacts: $(ARTIFACT_DIR)
 	mv $(wildcard $(PACKAGE_NAME)*) $(ARTIFACT_DIR)
 
 .PHONY: clean
 clean:
-	rm -r $(ARTIFACT_DIR) || true ;\
-	$(MAKE) -C src clean
+	rm -r $(ARTIFACT_DIR) || true
 
